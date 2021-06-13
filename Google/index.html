@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>Google</title>
     <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="CSS/results.css" />
+     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
   </head>
   <body>
 <div id="wrapper" v-bind:class="{'results': googleSearch != '' }">
-
-
   <div id="nav">
 
     <a class="toplink">Gmail</a>
@@ -143,5 +144,11 @@
 
 
 </div>
+<script>
+      document.getElementById("submit-btn").onclick = function () {
+        if (!!document.getElementById("main-search").value)
+          document.getElementById("wrapper").classList.add("results");
+      };
+    </script>
   </body>
 </html>
