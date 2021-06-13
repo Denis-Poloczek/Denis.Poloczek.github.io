@@ -141,8 +141,88 @@
 
 
 
-
 </div>
+<script src="cities.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#wrapper",
+        data: function () {
+          return {
+            googleSearch: "",
+            cities: window.cities,
+            arrowCounter: -1,
+            results: [],
+            isOpen: false,
+          };
+        },
+        computed: {
+          filteredCities: function () {
+            if (this.googleSearch != "") {
+              let tab = [];
+              let tab1 = [];
+              tab = this.cities
+                .filter((ele) => ele.country.includes(this.googleSearch))
+                .slice(0, 10);
+              this.result = tab;
+              tab.map((element) => {
+                tab1.push(
+                  element.country.replace(
+                    new RegExp(this.googleSearch, "gi"),
+                    (match) => {
+                      return (
+                        '<span style="font-weight:300">' + match + "</span>"
+                      );
+                    }
+                  )
+                );
+              });
+              return tab1;
+            } else {
+              return [];
+            }
+          },
+        },
+        methods: {
+          suggestionClick: function (result) {
+            this.googleSearch = result
+              .replace(
+                new RegExp('<span style="font-weight:300">', "gi"),
+                (match) => {
+                  return "";
+                }
+              )
+              .replace(new RegExp("</span>", "gi"), (match) => {
+                return "";
+              });
+            this.isOpen = false;
+          },
+          onChange() {
+            this.isOpen = true;
+            this.results = this.cities
+              .filter((ele) => ele.country.includes(this.googleSearch))
+              .slice(0, 10);
+          },
+          onArrowDown() {
+            if (this.arrowCounter === this.results.length - 1) {
+              this.arrowCounter = 0;
+            } else if (this.arrowCounter < this.results.length) {
+              this.arrowCounter = this.arrowCounter + 1;
+            }
+          },
+          onArrowUp() {
+            if (this.arrowCounter > 0) {
+              this.arrowCounter = this.arrowCounter - 1;
+            } else if ((this.arrowCounter = -1)) {
+              this.arrowCounter = this.results.length - 1;
+            }
+          },
+          onEnter() {
+            this.googleSearch = this.results[this.arrowCounter];
+            this.arrowCounter = -1;
+          },
+        },
+      });
+    </script>
 <script>
       document.getElementById("submit-btn").onclick = function () {
         if (!!document.getElementById("main-search").value)
