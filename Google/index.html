@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="CSS/Style.css">
   </head>
   <body>
+<div id="wrapper" v-bind:class="{'results': googleSearch != '' }">
+
 
   <div id="nav">
 
@@ -46,6 +48,86 @@
     </div>
     </div>
 
+    <div class="results-rows">
+        <div id="border1">
+          <div class="option-bar">
+            <div class="single-icon"><img src="IMG/magnifing-glasss.jpg" /> All</div>
+            <div class="single-icon"><img src="IMG/new.png" /> News</div>
+            <div class="single-icon"><img src="IMG/images.png" /> Images</div>
+            <div class="single-icon"><img src="IMG/videos.png" /> Video</div>
+            <div class="single-icon"><img src="IMG/maps.png" /> Maps</div>
+            <div class="single-icon"><img src="IMG/more.png" /> More</div>
+            <div class="single-icon"><a href="">Settings</a></div>
+            <div class="single-icon"><a href="">Tools</a></div>
+          </div>
+        </div>
+        <div class="count-info">About 12 459 850 results (0.22 seconds)</div>
+        <div class="single-res">
+          <div class="header">Lorem ipsum dolor sit amet</div>
+          <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur.
+          </div>
+        </div>
+        <div class="single-res">
+          <div class="header">
+            Viverra maecenas accumsan lacus vel
+          </div>
+          <div class="text">
+            Sit amet est placerat in egestas erat. Suscipit tellus mauris a diam maecenas sed.
+            Dui vivamus arcu felis bibendum. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing.
+            Neque gravida in fermentum et sollicitudin. Quam quisque id diam vel.
+            Id porta nibh venenatis cras sed felis.
+          </div>
+        </div>
+        <div class="single-res">
+          <div class="header">
+            Duis tristique sollicitudin nibh sit amet commodo
+          </div>
+          <div class="text">
+            Fames ac turpis egestas maecenas.Pulvinar sapien et ligula ullamcorper malesuada proin.
+            Nunc non blandit massa enim. Velit aliquet sagittis id consectetur.
+            Commodo nulla facilisi nullam vehicula ipsum a arcu cursus.
+          </div>
+        </div>
+        <div class="single-res">
+          <div class="header">
+            Vel fringilla est ullamcorper eget nulla.
+          </div>
+          <div class="text">
+            Eros donec ac odio tempor orci dapibus. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin.
+            Lacinia at quis risus sed vulputate odio ut. Lectus urna duis convallis convallis tellus id interdum velit
+            laoreet. Vitae justo eget magna fermentum.
+            In metus vulputate eu scelerisque felis.
+            Sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula.
+          </div>
+        </div>
+        <div class="single-res">
+          <div class="header">
+            Erat imperdiet sed euismod nisi porta lorem mollis aliquam ut.
+          </div>
+          <div class="text">
+            Enim nunc faucibus a pellentesque sit. Nulla aliquet enim tortor at.
+            Et magnis dis parturient montes nascetur ridiculus mus mauris.
+            Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et.
+            Aliquet lectus proin nibh nisl condimentum.
+            Purus in mollis nunc sed id semper risus in. Fermentum leo vel orci porta non.
+          </div>
+        </div>
+        <div class="single-res">
+          <div class="header">
+            Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum.
+          </div>
+          <div class="text">
+            Ut porttitor leo a diam sollicitudin tempor id eu. Porttitor massa id neque aliquam vestibulum.
+            Praesent semper feugiat nibh sed. Mauris sit amet massa vitae.
+            At lectus urna duis convallis convallis tellus.
+            Cursus turpis massa tincidunt dui ut ornare. Quis viverra nibh cras pulvinar mattis.
+          </div>
+        </div>
+
 
 
       <div id="footer-content">
@@ -60,6 +142,6 @@
 
 
 
-
+</div>
   </body>
 </html>
